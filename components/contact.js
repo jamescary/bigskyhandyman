@@ -4,10 +4,27 @@ const handleDateToday = (e) => {
   el.value = new Date(Date.now()).toISOString().split("T")[0];
 };
 
-const handleSubmitContact = (e) => {
-  e.preventDefault();
-  const el = document.querySelector('[data-id="submitSuccess"]');
-  el.classList.remove("hidden");
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({
+      "form-name": event.target.getAttribute("name"),
+      ...name,
+    }),
+  })
+    .then(() => {
+      const el = document.querySelector('[data-id="submitSuccess"]');
+      el.classList.remove("hidden");
+    })
+    .catch((error) => alert(error));
 };
 
 export default function Contact() {
@@ -18,6 +35,7 @@ export default function Contact() {
         method="POST"
         netlify-honeypot="bot-field"
         data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className="hidden">
@@ -28,29 +46,32 @@ export default function Contact() {
         <h2 className="text-2xl font-bold">Contact Us</h2>
         <div className="mt-8 max-w-screen-xl w-96">
           <div className="grid grid-cols-1 gap-6">
-            <label className="block" htmlFor="name">
+            <label className="block" htmlFor="yourname">
               <span className="text-gray-700">Full name</span>
               <input
                 type="text"
                 name="name"
+                id="yourname"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
                 placeholder=""
               />
             </label>
-            <label className="block" htmlFor="email">
+            <label className="block" htmlFor="youremail">
               <span className="text-gray-700">Email address</span>
               <input
                 type="email"
                 name="email"
+                id="youremail"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
                 placeholder="john@example.com"
               />
             </label>
-            <label className="block" htmlFor="phone">
+            <label className="block" htmlFor="yourphone">
               <span className="text-gray-700">Phone number</span>
               <input
                 type="tel"
                 name="phone"
+                id="yourphone"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
                 placeholder="(512) 555-9999"
               />
@@ -59,7 +80,8 @@ export default function Contact() {
               <span className="text-gray-700">When do you need it done?</span>
               <input
                 type="date"
-                name="dateRequested"
+                name="serviceDate"
+                id="dateRequested"
                 data-input="date"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
               />
@@ -73,7 +95,8 @@ export default function Contact() {
             <label className="block" htmlFor="workType">
               <span className="text-gray-700">What type of work?</span>
               <select
-                name="workType"
+                name="workOption"
+                id="workType"
                 className="block w-full mt-1 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
               >
                 <option>Repair</option>
@@ -86,7 +109,8 @@ export default function Contact() {
             <label className="block" htmlFor="details">
               <span className="text-gray-700">Additional details</span>
               <textarea
-                name="details"
+                name="comments"
+                id="details"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
                 rows="3"
               ></textarea>
@@ -97,7 +121,8 @@ export default function Contact() {
                   <label className="inline-flex items-center" htmlFor="optIn">
                     <input
                       type="checkbox"
-                      name="optIn"
+                      name="emailOptIn"
+                      id="optIn"
                       className="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"
                     />
                     <span className="ml-2">
@@ -112,7 +137,6 @@ export default function Contact() {
                 <div>
                   <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-                    onClick={handleSubmitContact}
                     type="submit"
                   >
                     Submit
