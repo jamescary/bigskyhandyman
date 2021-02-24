@@ -1,12 +1,25 @@
-import Image from 'next/image';
+// const whatWeGot = (e) => {
+//   const el = document.querySelector('[data-id="what"]');
+//   el.innerText = "skills"
+// };
+// const whereWeGotIt = (e) => {
+//   const el = document.querySelector('[data-id="where"]');
+//   el.innerText = "your home"
+// };
+
+const toggleMenu = (e) => {
+  const el = document.querySelector('[data-id="mobileMenu"]');
+  console.log(el);
+  el.classList.toggle("hidden");
+};
 
 export default function Hero() {
   return (
-    <div class="relative bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+    <div className="relative bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <svg
-            class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
             fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
@@ -15,30 +28,31 @@ export default function Hero() {
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
 
-          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+          <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
             <nav
-              class="relative flex items-center justify-between sm:h-10 lg:justify-start"
+              className="relative flex items-center justify-between sm:h-10 lg:justify-start"
               aria-label="Global"
             >
-              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                <div class="flex items-center justify-between w-full md:w-auto">
+              <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div className="flex items-center justify-between w-full md:w-auto">
                   <a href="#">
-                    <span class="sr-only">Workflow</span>
+                    <span className="sr-only">Workflow</span>
                     <img
-                      class="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      className="h-8 w-auto sm:h-10"
+                      src="/hammer-outline.svg"
                     ></img>
                   </a>
-                  <div class="-mr-2 flex items-center md:hidden">
+                  <div className="-mr-2 flex items-center md:hidden">
                     <button
                       type="button"
-                      class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                       id="main-menu"
                       aria-haspopup="true"
+                      onClick={toggleMenu}
                     >
-                      <span class="sr-only">Open main menu</span>
+                      <span className="sr-only">Open main menu</span>
                       <svg
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -46,8 +60,8 @@ export default function Hero() {
                         aria-hidden="true"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           strokeWidth="2"
                           d="M4 6h16M4 12h16M4 18h16"
                         />
@@ -56,41 +70,41 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+              <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                 <a
-                  href="#"
-                  class="font-medium text-gray-500 hover:text-gray-900"
+                  href="/"
+                  className="font-medium text-gray-500 hover:text-gray-900"
                 >
-                  Product
+                  Home
                 </a>
 
-                <a
-                  href="#"
-                  class="font-medium text-gray-500 hover:text-gray-900"
+                {/* <a
+                  href="/contact"
+                  className="font-medium text-gray-500 hover:text-gray-900"
                 >
-                  Features
-                </a>
+                  Contact
+                </a> */}
 
-                <a
+                {/* <a
                   href="#"
-                  class="font-medium text-gray-500 hover:text-gray-900"
+                  className="font-medium text-gray-500 hover:text-gray-900"
                 >
                   Marketplace
                 </a>
 
                 <a
                   href="#"
-                  class="font-medium text-gray-500 hover:text-gray-900"
+                  className="font-medium text-gray-500 hover:text-gray-900"
                 >
                   Company
                 </a>
 
                 <a
                   href="#"
-                  class="font-medium text-blue-400 hover:text-indigo-500"
+                  className="font-medium text-blue-400 hover:text-indigo-500"
                 >
                   Log in
-                </a>
+                </a> */}
               </div>
             </nav>
           </div>
@@ -105,25 +119,28 @@ export default function Hero() {
             From: "opacity-100 scale-100"
             To: "opacity-0 scale-95"
           */}
-          <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-            <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div class="px-5 pt-4 flex items-center justify-between">
+          <div
+            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            data-id="mobileMenu"
+          >
+            <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="px-5 pt-4 flex items-center justify-between">
                 <div>
                   <img
-                    class="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-blue-500.svg"
+                    className="h-8 w-auto"
+                    src="/hammer-outline.svg"
                     alt=""
                   ></img>
                 </div>
-                <div class="-mr-2">
+                <div className="-mr-2">
                   <button
                     type="button"
-                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    onClick={toggleMenu}
                   >
-                    <span class="sr-only">Close main menu</span>
-                    {/* Heroicon name: outline/x */}
+                    <span className="sr-only">Close main menu</span>
                     <svg
-                      class="h-6 w-6"
+                      className="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -131,8 +148,8 @@ export default function Hero() {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth="2"
                         d="M6 18L18 6M6 6l12 12"
                       />
@@ -145,18 +162,18 @@ export default function Hero() {
                 aria-orientation="vertical"
                 aria-labelledby="main-menu"
               >
-                <div class="px-2 pt-2 pb-3 space-y-1" role="none">
+                <div className="px-2 pt-2 pb-3 space-y-1" role="none">
                   <a
                     href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     role="menuitem"
                   >
-                    Product
+                    Home
                   </a>
 
-                  <a
+                  {/* <a
                     href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     role="menuitem"
                   >
                     Features
@@ -164,7 +181,7 @@ export default function Hero() {
 
                   <a
                     href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     role="menuitem"
                   >
                     Marketplace
@@ -172,73 +189,76 @@ export default function Hero() {
 
                   <a
                     href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     role="menuitem"
                   >
                     Company
-                  </a>
+                  </a> */}
                 </div>
-                <div role="none">
+                {/* <div role="none">
                   <a
                     href="#"
-                    class="block w-full px-5 py-3 text-center font-medium text-blue-400 bg-gray-50 hover:bg-gray-100"
+                    className="block w-full px-5 py-3 text-center font-medium text-blue-400 bg-gray-50 hover:bg-gray-100"
                     role="menuitem"
                   >
                     Log in
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
-          <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div class="sm:text-center lg:text-left">
-              <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span class="block xl:inline">We have the skills to enrich </span>
-                <span class="block text-blue-400 xl:inline">
+          <main className="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div className="sm:text-center lg:text-left">
+              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span className="block xl:inline">We have the </span>
+                <span className="block text-blue-400 xl:inline" data-id="what">
+                  skills
+                </span>
+                <span className="block xl:inline"> to enrich </span>
+                <span className="block text-blue-400 xl:inline" data-id="where">
                   your home
                 </span>
               </h1>
-              <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                David is a proven professional with construction and maintenance
+                experience in both commercial and residential properties for
+                more than 20 years. He can provide the know-how and the skills
+                to build or fix damn near anything you throw at him. Just make
+                sure to yell "Heads Up!" before you throw it.
               </p>
-              <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div class="rounded-md shadow">
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 lg:max-w-lg">
+                Use the form below to send us some details about your needs and
+                we'll get back to you as soon as we can.
+              </p>
+              {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="rounded-md shadow">
                   <a
                     href="#"
-                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 md:py-4 md:text-lg md:px-10"
                   >
                     Get started
                   </a>
                 </div>
-                <div class="mt-3 sm:mt-0 sm:ml-3">
+                <div className="mt-3 sm:mt-0 sm:ml-3">
                   <a
                     href="#"
-                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
                   >
                     Live demo
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </main>
         </div>
       </div>
-      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        {/* <img
-          class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-          alt=""
-        ></img> */}
-
-        <Image
+      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="/IMG_1856.jpeg"
-          alt="picture of the man himself"  
-          layout="fill"
-          class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-        ></Image>
+          alt=""
+        ></img>
       </div>
     </div>
   );
