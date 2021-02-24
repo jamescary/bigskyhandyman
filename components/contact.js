@@ -6,7 +6,12 @@ const handleDateToday = (e) => {
 export default function Contact() {
   return (
     <div class="py-12">
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
         <h2 class="text-2xl font-bold">Contact Us</h2>
         <div class="mt-8 max-w-md">
           <div class="grid grid-cols-1 gap-6">
