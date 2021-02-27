@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Hero from "../components/hero.js";
+import Skills from "../components/skills.js";
 import Contact from "../components/contact.js";
 import Footer from "../components/footer.js";
 
@@ -15,7 +16,10 @@ export default function Home() {
       <div className="container mx-auto">
         <Hero></Hero>
         <div className="divide-y divide-gray-300">
-          <Contact></Contact>
+          <div class="grid xl:grid-cols-2 md:grid-cols-1">
+            <Contact></Contact>
+            <Skills></Skills>
+          </div>
           <Footer></Footer>
         </div>
       </div>

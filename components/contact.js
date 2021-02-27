@@ -21,7 +21,7 @@ export default function Contact() {
         // onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <h2 className="text-2xl font-bold">Contact Us</h2>
+        <h2 className="text-3xl font-bold sm:text-4xl">Contact Us</h2>
         <div className="mt-8 max-w-screen-xl w-96">
           <div className="grid grid-cols-1 gap-6">
             <label className="block" htmlFor="yourname">
