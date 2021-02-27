@@ -4,27 +4,10 @@ const handleDateToday = (e) => {
   el.value = new Date(Date.now()).toISOString().split("T")[0];
 };
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
 const handleSubmit = (event) => {
-  event.preventDefault();
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({
-      "form-name": event.target.getAttribute("name"),
-      ...name,
-    }),
-  })
-    .then(() => {
-      const el = document.querySelector('[data-id="submitSuccess"]');
-      el.classList.remove("hidden");
-    })
-    .catch((error) => alert(error));
+  // event.preventDefault();
+  const el = document.querySelector('[data-id="submitSuccess"]');
+  el.classList.remove("hidden");
 };
 
 export default function Contact() {
@@ -33,16 +16,11 @@ export default function Contact() {
       <form
         name="contact"
         method="POST"
-        netlify-honeypot="bot-field"
+        // netlify-honeypot="bot-field"
         data-netlify="true"
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <p className="hidden">
-          <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-          </label>
-        </p>
         <h2 className="text-2xl font-bold">Contact Us</h2>
         <div className="mt-8 max-w-screen-xl w-96">
           <div className="grid grid-cols-1 gap-6">
@@ -95,15 +73,15 @@ export default function Contact() {
             <label className="block" htmlFor="workType">
               <span className="text-gray-700">What type of work?</span>
               <select
-                name="workOption"
+                name="workOption[]"
                 id="workType"
                 className="block w-full mt-1 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
               >
-                <option>Repair</option>
-                <option>Installation</option>
-                <option>Plumbing</option>
-                <option>Electrical</option>
-                <option>Other</option>
+                <option value="Repair">Repair</option>
+                <option value="Installation">Installation</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Other">Other</option>
               </select>
             </label>
             <label className="block" htmlFor="details">
@@ -132,12 +110,18 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+            <p className="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
             <div className="block">
               <div className="mt-2">
                 <div>
                   <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
                     type="submit"
+                    onClick={handleSubmit}
                   >
                     Submit
                   </button>
