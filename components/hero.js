@@ -244,15 +244,15 @@ export default function Hero() {
             </div>
           </div>
 
-          <main className="mx-auto max-w-3xl lg:max-w-7xl px-4 pt-4 md:pt-0 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <main className="mx-auto max-w-3xl lg:max-w-7xl px-4 pt-4 md:pt-0 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">We have the </span>
-                <span className="block text-blue-500 xl:inline" data-id="what">
+                <span className="inline">We have the </span>
+                <span className="text-blue-500 inline" data-id="what">
                   skills
                 </span>
-                <span className="block xl:inline"> to enrich </span>
-                <span className="block text-blue-500 xl:inline" data-id="where">
+                <span className="block md:inline break-words"> to enrich </span>
+                <span className="text-blue-500" data-id="where">
                   your home
                 </span>
               </h1>
