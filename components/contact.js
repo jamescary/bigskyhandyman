@@ -1,9 +1,3 @@
-// const handleDateToday = (e) => {
-//   e.preventDefault();
-//   const el = document.querySelector('[data-input="date"]');
-//   el.value = new Date(Date.now()).toISOString().split("T")[0];
-// };
-
 const handleSubmit = (event) => {
   // event.preventDefault();
   const el = document.querySelector('[data-id="submitSuccess"]');
@@ -63,7 +57,7 @@ export default function Contact() {
                 id="dateRequested"
                 data-input="date"
                 placeholder="mm/dd/yyyy"
-                className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 date"
               />
               {/* <button
                 className="bg-transparent hover:bg-blue-500 text-gray-700 font-light hover:text-white py-1 px-3 border border-gray-500 hover:border-transparent rounded"

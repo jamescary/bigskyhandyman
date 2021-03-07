@@ -18,3 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.date {
+  min-height: 2.5rem;
+}
