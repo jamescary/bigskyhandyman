@@ -12,7 +12,7 @@ const handleSubmit = (event) => {
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-3xl lg:max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 pb-12">
+    <div className="mx-auto max-w-3xl lg:max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 py-20">
       <form
         name="contact"
         id="contact"

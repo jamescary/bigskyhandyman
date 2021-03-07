@@ -1,12 +1,3 @@
-// const whatWeGot = (e) => {
-//   const el = document.querySelector('[data-id="what"]');
-//   el.innerText = "skills"
-// };
-// const whereWeGotIt = (e) => {
-//   const el = document.querySelector('[data-id="where"]');
-//   el.innerText = "your home"
-// };
-
 const navScrollTo = (e) => {
   e.preventDefault();
   const elId = e.target.dataset.id;
@@ -144,11 +135,29 @@ export default function Hero() {
             <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="px-5 pt-4 flex items-center justify-between">
                 <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="/home-outline.svg"
-                    alt=""
-                  ></img>
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-auto sm:h-10"
+                      viewBox="0 0 512 512"
+                    >
+                      <title>Home</title>
+                      <path
+                        d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
+                        fill="lightgray"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="32"
+                      />
+                      <path
+                        d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69"
+                        fill="lightgray"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="32"
+                      />
+                    </svg>
                 </div>
                 <div className="-mr-2">
                   <button
