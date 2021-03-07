@@ -1,6 +1,6 @@
-export default function Contact() {
+export default function Skills() {
   return (
-    <div className="py-12 bg-white">
+    <div className="py-12 relative bg-white overflow-hidden">
       <div className="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-base text-blue-500 font-semibold tracking-wide uppercase">

@@ -12,7 +12,7 @@ const handleSubmit = (event) => {
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-3xl lg:max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 py-20">
+    <div className="mx-auto max-w-3xl xl:max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 py-0 xl:py-20">
       <form
         name="contact"
         id="contact"
@@ -23,7 +23,7 @@ export default function Contact() {
       >
         <input type="hidden" name="form-name" value="contact" />
         <h2 className="text-3xl font-bold sm:text-4xl">Contact Us</h2>
-        <div className="mt-8 max-w-screen-xl w-96">
+        <div className="mt-8 max-w-screen-xl">
           <div className="grid grid-cols-1 gap-6">
             <label className="block" htmlFor="yourname">
               <span className="text-gray-700">Full name</span>

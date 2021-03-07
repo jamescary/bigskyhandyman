@@ -10,7 +10,7 @@ export default function Home() {
       <Head>
         <title>Big Sky Handyman</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="shortcut icon" href="/hammer-outline.svg" />
       </Head>
       <div className="container mx-auto">
