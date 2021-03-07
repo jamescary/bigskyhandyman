@@ -16,9 +16,9 @@ export default function Home() {
       <div className="container mx-auto">
         <Hero></Hero>
         <div className="divide-y divide-gray-300">
-          <div class="grid xl:grid-cols-2 md:grid-cols-1">
-            <Contact></Contact>
+          <div className="grid xl:grid-cols-2 md:grid-cols-1">
             <Skills></Skills>
+            <Contact></Contact>
           </div>
           <Footer></Footer>
         </div>

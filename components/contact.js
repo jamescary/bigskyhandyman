@@ -1,8 +1,8 @@
-const handleDateToday = (e) => {
-  e.preventDefault();
-  const el = document.querySelector('[data-input="date"]');
-  el.value = new Date(Date.now()).toISOString().split("T")[0];
-};
+// const handleDateToday = (e) => {
+//   e.preventDefault();
+//   const el = document.querySelector('[data-input="date"]');
+//   el.value = new Date(Date.now()).toISOString().split("T")[0];
+// };
 
 const handleSubmit = (event) => {
   // event.preventDefault();
@@ -12,9 +12,10 @@ const handleSubmit = (event) => {
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 pb-12">
+    <div className="mx-auto max-w-3xl lg:max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 pb-12">
       <form
         name="contact"
+        id="contact"
         method="POST"
         // netlify-honeypot="bot-field"
         data-netlify="true"
@@ -63,12 +64,12 @@ export default function Contact() {
                 data-input="date"
                 className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
               />
-              <button
+              {/* <button
                 className="bg-transparent hover:bg-blue-500 text-gray-700 font-light hover:text-white py-1 px-3 border border-gray-500 hover:border-transparent rounded"
                 onClick={handleDateToday}
               >
                 Today
-              </button>
+              </button> */}
             </label>
             <label className="block" htmlFor="workType">
               <span className="text-gray-700">What type of work?</span>
@@ -77,11 +78,12 @@ export default function Contact() {
                 id="workType"
                 className="block w-full mt-1 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
               >
+                <option value="">Please select the type of work you need</option>
                 <option value="Repair">Repair</option>
                 <option value="Installation">Installation</option>
                 <option value="Plumbing">Plumbing</option>
                 <option value="Electrical">Electrical</option>
-                <option value="Other">Other</option>
+                <option value="Other">Other (Please describe below)</option>
               </select>
             </label>
             <label className="block" htmlFor="details">

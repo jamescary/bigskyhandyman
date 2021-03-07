@@ -7,6 +7,19 @@
 //   el.innerText = "your home"
 // };
 
+const navScrollTo = (e) => {
+  e.preventDefault();
+  const elId = e.target.dataset.id;
+  console.log("elid", elId);
+  const targetEl = document.querySelector(`#${elId}`);
+  const scrollIntoViewOptions = {
+    block: "start",
+    inline: "nearest",
+    behavior: "smooth",
+  };
+  targetEl.scrollIntoView(scrollIntoViewOptions);
+};
+
 const toggleMenu = (e) => {
   const el = document.querySelector('[data-id="mobileMenu"]');
   console.log(el);
@@ -16,7 +29,7 @@ const toggleMenu = (e) => {
 export default function Hero() {
   return (
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-3xl lg:max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <svg
             className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
@@ -27,7 +40,7 @@ export default function Hero() {
           >
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
-          <div className="float-left md:float-right pr-2 pt-6 z-10 text-4xl font-extrabold text-blue-400 hidden md:block">
+          <div className="float-left md:float-right pr-2 pt-6 z-10 text-4xl font-extrabold text-blue-500 hidden md:block">
             Big Sky Handyman
           </div>
 
@@ -39,12 +52,33 @@ export default function Hero() {
               <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                 <div className="flex items-center justify-between w-full md:w-auto">
                   <a href="#">
-                    <img
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
                       className="h-8 w-auto sm:h-10"
-                      src="/hammer-outline.svg"
-                    ></img>
+                      viewBox="0 0 512 512"
+                    >
+                      <title>Home</title>
+                      <path
+                        d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
+                        fill="lightgray"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="32"
+                      />
+                      <path
+                        d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69"
+                        fill="lightgray"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="32"
+                      />
+                    </svg>
                   </a>
-                  <div className="md:hidden text-3xl font-extrabold text-blue-400 -ml-40">Big Sky Handyman</div>
+                  <div className="md:hidden text-3xl font-extrabold text-blue-500">
+                    Big Sky Handyman
+                  </div>
                   <div className="-mr-2 flex items-center md:hidden">
                     <button
                       type="button"
@@ -80,34 +114,15 @@ export default function Hero() {
                 >
                   Home
                 </a>
-
-                {/* <a
-                  href="/contact"
-                  className="font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Contact
-                </a> */}
-
-                {/* <a
-                  href="#"
-                  className="font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Marketplace
-                </a>
-
                 <a
                   href="#"
+                  onClick={navScrollTo}
+                  data-id="contact"
                   className="font-medium text-gray-500 hover:text-gray-900"
+                  role="menuitem"
                 >
-                  Company
+                  Contact Us
                 </a>
-
-                <a
-                  href="#"
-                  className="font-medium text-blue-400 hover:text-indigo-500"
-                >
-                  Log in
-                </a> */}
               </div>
             </nav>
           </div>
@@ -131,7 +146,7 @@ export default function Hero() {
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="/hammer-outline.svg"
+                    src="/home-outline.svg"
                     alt=""
                   ></img>
                 </div>
@@ -173,6 +188,15 @@ export default function Hero() {
                   >
                     Home
                   </a>
+                  <a
+                    href="#"
+                    onClick={navScrollTo}
+                    data-id="contact"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    role="menuitem"
+                  >
+                    Contact Us
+                  </a>
 
                   {/* <a
                     href="#"
@@ -201,7 +225,7 @@ export default function Hero() {
                 {/* <div role="none">
                   <a
                     href="#"
-                    className="block w-full px-5 py-3 text-center font-medium text-blue-400 bg-gray-50 hover:bg-gray-100"
+                    className="block w-full px-5 py-3 text-center font-medium text-blue-500 bg-gray-50 hover:bg-gray-100"
                     role="menuitem"
                   >
                     Log in
@@ -211,15 +235,15 @@ export default function Hero() {
             </div>
           </div>
 
-          <main className="mx-auto max-w-7xl px-4 pt-4 md:pt-0 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <main className="mx-auto max-w-3xl lg:max-w-7xl px-4 pt-4 md:pt-0 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">We have the </span>
-                <span className="block text-blue-400 xl:inline" data-id="what">
+                <span className="block text-blue-500 xl:inline" data-id="what">
                   skills
                 </span>
                 <span className="block xl:inline"> to enrich </span>
-                <span className="block text-blue-400 xl:inline" data-id="where">
+                <span className="block text-blue-500 xl:inline" data-id="where">
                   your home
                 </span>
               </h1>
@@ -258,8 +282,13 @@ export default function Hero() {
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          className="lg:hidden xl:block h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="/IMG_1856.jpeg"
+          alt=""
+        ></img>
+        <img
+          className="hidden lg:block xl:hidden h-56 w-full object-contain object-right sm:h-72 md:h-96 lg:w-full lg:h-full"
+          src="/IMG_1856_crop_lg.jpeg"
           alt=""
         ></img>
       </div>
