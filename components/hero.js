@@ -291,13 +291,8 @@ export default function Hero() {
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="lg:hidden xl:block h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="/IMG_1856.jpeg"
-          alt=""
-        ></img>
-        <img
-          className="hidden lg:block xl:hidden h-56 w-full object-contain object-right sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="/IMG_1856_crop_lg.jpeg"
+          className="lg:block h-full w-full object-cover sm:h-full md:h-full lg:w-full lg:h-full"
+          src="/David.jpeg"
           alt=""
         ></img>
       </div>
