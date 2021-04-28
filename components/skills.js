@@ -64,7 +64,7 @@ export default function Skills() {
               </div>
             </div>
 
-            <div className="flex">
+            {/* <div className="flex">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                   <svg
@@ -103,7 +103,7 @@ export default function Skills() {
                   Assembling furniture and installing bookshelves, sorting out garage or backyard storage. 
                 </dd>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex">
               <div className="flex-shrink-0">
