@@ -1,15 +1,15 @@
 export default function Skills() {
   return (
-    <div className="py-12 relative bg-white overflow-hidden">
+    <div className="py-12 relative bg-white dark:bg-gray-800 overflow-hidden">
       <div className="max-w-3xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-blue-500 font-semibold tracking-wide uppercase">
+          <h2 className="text-base text-blue-500 dark:text-blue-200 font-semibold tracking-wide uppercase">
             Skills
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 dark:text-gray-200 sm:text-4xl">
             We can do (almost) anything
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-200 lg:mx-auto">
             We have experience doing all sorts of odd jobs. If your job is too
             big or you haven't got the tools, just give us a call!
           </p>
@@ -19,7 +19,7 @@ export default function Skills() {
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white dark:text-gray-200">
                   <svg
                     className="h-10 w-10"
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,12 +54,12 @@ export default function Skills() {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                   Installation and repair
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
-                  Drywall, brick, stone, tile, and wood. 
-                  We can install, repair, patch, fix, texture and remodel it all!
+                <dd className="mt-2 text-base text-gray-500 dark:text-gray-200">
+                  Drywall, brick, stone, tile, and wood. We can install, repair,
+                  patch, fix, texture and remodel it all!
                 </dd>
               </div>
             </div>
@@ -93,10 +93,10 @@ export default function Skills() {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                   Home Remodeling and Heavy Lifting
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2 text-base text-gray-500 dark:text-gray-200">
                   We've remodeled kitchens and bathrooms all over the United States. 
                   Whether you want all new cabinets, countertops, and appliances: we can make your vision into reality.
                   Closet systems galore, we can help you organize your life.
@@ -127,12 +127,13 @@ export default function Skills() {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                   Appliance Installation
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
-                  Thermostats to refrigerators, we can install your appliances, 
-                  and if you finally need that beautiful rain shower and soaking tub, we can beautify your abode.
+                <dd className="mt-2 text-base text-gray-500 dark:text-gray-200">
+                  Thermostats to refrigerators, we can install your appliances,
+                  and if you finally need that beautiful rain shower and soaking
+                  tub, we can beautify your abode.
                 </dd>
               </div>
             </div>
@@ -165,13 +166,15 @@ export default function Skills() {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                   Pressure Cleaning, Painting, Weather Proofing
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
-                  Oil-stained driveways, weather-worn patios, and faded paint are no good! 
-                  We have the know-how and the tools to remedy the situation and make your home beautiful inside and out.
-                  We can also repair water damage and make your home look just as good as it did before that pipe burst!
+                <dd className="mt-2 text-base text-gray-500 dark:text-gray-200">
+                  Oil-stained driveways, weather-worn patios, and faded paint
+                  are no good! We have the know-how and the tools to remedy the
+                  situation and make your home beautiful inside and out. We can
+                  also repair water damage and make your home look just as good
+                  as it did before that pipe burst!
                 </dd>
               </div>
             </div>
