@@ -127,7 +127,7 @@ export default function Hero() {
             className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right hidden"
             data-id="mobileMenu"
           >
-            <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div className="rounded-lg shadow-md bg-white dark:bg-gray-800 dark:text-gray-200 ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="px-5 pt-4 flex items-center justify-between">
                 <div>
                   <svg
@@ -157,7 +157,7 @@ export default function Hero() {
                 <div className="-mr-2">
                   <button
                     type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 dark:text-gray-200 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    className="bg-white dark:bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                     onClick={toggleMenu}
                   >
                     <span className="sr-only">Close main menu</span>
@@ -187,7 +187,7 @@ export default function Hero() {
                 <div className="px-2 pt-2 pb-3 space-y-1" role="none">
                   <a
                     href="#"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
                     role="menuitem"
                   >
                     Home
@@ -196,7 +196,7 @@ export default function Hero() {
                     href="#"
                     onClick={navScrollTo}
                     data-id="contact"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
                     role="menuitem"
                   >
                     Contact Us
