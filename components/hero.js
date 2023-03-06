@@ -1,7 +1,6 @@
 const navScrollTo = (e) => {
   e.preventDefault();
   const elId = e.target.dataset.id;
-  console.log("elid", elId);
   const targetEl = document.querySelector(`#${elId}`);
   const scrollIntoViewOptions = {
     block: "start",
@@ -9,11 +8,13 @@ const navScrollTo = (e) => {
     behavior: "smooth",
   };
   targetEl.scrollIntoView(scrollIntoViewOptions);
+
+  const focusEl  = document.querySelector(`#yourname`);
+  focusEl?.focus({preventScroll: true});
 };
 
 const toggleMenu = (e) => {
   const el = document.querySelector('[data-id="mobileMenu"]');
-  console.log(el);
   el.classList.toggle("hidden");
 };
 
@@ -257,6 +258,8 @@ export default function Hero() {
                 more than 20 years. He can provide the know-how and the skills
                 to build or fix damn near anything you throw at him. Just make
                 sure to yell "Heads Up!" before you throw it.
+              </p><p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Big Sky Handyman services Central Texas in Williamson and Travis counties, including North Austin, Cedar Park, Georgetown, Round Rock, Leander, and Liberty Hill.
               </p>
               <p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 lg:max-w-lg">
                 Use the form below to send us some details about your needs and
