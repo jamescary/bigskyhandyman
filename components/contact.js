@@ -143,7 +143,7 @@ export default function Contact() {
                   className="hidden text-green-600 font-semibold pt-3"
                   data-id="submitSuccess"
                 >
-                  Thanks for your submission. We'll reach out to you soon!
+                  Thanks for your submission. We&apos;ll reach out to you soon!
                 </div>
               </div>
             </div>

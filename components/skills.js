@@ -11,7 +11,7 @@ export default function Skills() {
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-200 lg:mx-auto">
             We have experience doing all sorts of odd jobs. If your job is too
-            big or you haven't got the tools, just give us a call!
+            big or you haven&apos;t got the tools, just give us a call!
           </p>
         </div>
 

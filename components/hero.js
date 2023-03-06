@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const navScrollTo = (e) => {
   e.preventDefault();
   const elId = e.target.dataset.id;
@@ -9,8 +11,8 @@ const navScrollTo = (e) => {
   };
   targetEl.scrollIntoView(scrollIntoViewOptions);
 
-  const focusEl  = document.querySelector(`#yourname`);
-  focusEl?.focus({preventScroll: true});
+  const focusEl = document.querySelector(`#yourname`);
+  focusEl?.focus({ preventScroll: true });
 };
 
 const toggleMenu = (e) => {
@@ -95,12 +97,12 @@ export default function Hero() {
                 </div>
               </div>
               <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                <a
+                <Link
                   href="/"
                   className="font-medium text-gray-500 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-400"
                 >
                   Home
-                </a>
+                </Link>
                 <a
                   href="#"
                   onClick={navScrollTo}
@@ -244,11 +246,20 @@ export default function Hero() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="inline dark:text-gray-200">We have the </span>
-                <span className="text-blue-500 dark:text-blue-300 inline" data-id="what">
+                <span
+                  className="text-blue-500 dark:text-blue-300 inline"
+                  data-id="what"
+                >
                   skills
                 </span>
-                <span className="block dark:text-gray-200 md:inline break-words"> to enrich </span>
-                <span className="text-blue-500 dark:text-blue-300" data-id="where">
+                <span className="block dark:text-gray-200 md:inline break-words">
+                  {" "}
+                  to enrich{" "}
+                </span>
+                <span
+                  className="text-blue-500 dark:text-blue-300"
+                  data-id="where"
+                >
                   your home
                 </span>
               </h1>
@@ -257,13 +268,27 @@ export default function Hero() {
                 experience in both commercial and residential properties for
                 more than 20 years. He can provide the know-how and the skills
                 to build or fix damn near anything you throw at him. Just make
-                sure to yell "Heads Up!" before you throw it.
-              </p><p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Big Sky Handyman services Central Texas in Williamson and Travis counties, including North Austin, Cedar Park, Georgetown, Round Rock, Leander, and Liberty Hill.
+                sure to yell &quot;Heads Up!&quot; before you throw it.
+              </p>
+              <p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Big Sky Handyman services Central Texas in Williamson and Travis
+                counties, including North Austin, Cedar Park, Georgetown, Round
+                Rock, Leander, and Liberty Hill.
               </p>
               <p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 lg:max-w-lg">
                 Use the form below to send us some details about your needs and
-                we'll get back to you as soon as we can.
+                we&apos;ll get back to you as soon as we can.
+              </p>
+              <p className="mt-3 text-base text-gray-500 dark:text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 lg:max-w-lg">
+                You can also reach out to us and see some of our past projects
+                on{" "}
+                <Link
+                  className="font-medium text-gray-500 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-400 underline"
+                  href="https://www.facebook.com/bigskyhandyman/"
+                >
+                  Facebook
+                </Link>
+                .
               </p>
               {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
